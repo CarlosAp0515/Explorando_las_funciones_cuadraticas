@@ -1,0 +1,73 @@
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+.chart-wrap {
+  position: relative;
+  height: 220px;
+}
+@media (min-width: 1024px) {
+  .chart-wrap {
+    height: 340px;
+  }
+}
+.CodeMirror {
+  height: 250px;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+}
+code {
+  background: #ede9fe;
+  padding: 0 0.25rem;
+  border-radius: 4px;
+}
+.toast {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  z-index: 60;
+  transform: translate(-50%, -150%);
+  opacity: 0;
+  background: #166534;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.35s,
+    opacity 0.35s;
+}
+.toast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+#confeti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+#confeti span {
+  position: absolute;
+  top: -12px;
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  animation: caer 2.5s linear forwards;
+}
+@keyframes caer {
+  to {
+    transform: translateY(105vh) rotate(720deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #confeti {
+    display: none;
+  }
+  .toast {
+    transition: none;
+  }
+}
